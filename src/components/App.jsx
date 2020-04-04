@@ -3,13 +3,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import notes from "../notes"
+import InptArea from "./InputArea"
 
-function addNotes(keeperNote) {
+function addNotes(noteItem) {
     return(
         <Note
-            key={keeperNote.id}
-            title={keeperNote.title}
-            content={keeperNote.content.substring(0, 50)}
+            key={noteItem.id}
+            title={noteItem.title}
+            content={noteItem.content.substring(0, 50)}
          />
     )
 }
@@ -18,6 +19,7 @@ function App(){
     return(
         <div>
             <Header />
+            <InptArea />
             {notes.map(addNotes)}
             <Footer />
         </div>
