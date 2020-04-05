@@ -17,13 +17,16 @@ function InputArea(props) {
   }
   function addText(event){
     props.onAdd(keeperText);
-    getText("");
+    getText({
+      title: "",
+      content: ""
+    });
     event.preventDefault();
   }
   return (
     <div>
-      <form>
-        <input onChange={getKeeper} value={keeperText.title} name="title" required autoComplete="off"  placeholder="Title" />
+      <form className="create-note">
+        <input onChange={getKeeper} autoFocus value={keeperText.title} name="title" required autoComplete="off"  placeholder="Title" />
         <textarea onChange={getKeeper} value={keeperText.content} required name="content" placeholder="Take a note..." rows="3" />
         <button onClick={addText}>+</button>
       </form>
